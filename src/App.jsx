@@ -7,7 +7,7 @@ import Resume from './Components/Resume'
 import Footer from "./Components/Footer";
 import Contact from "./Components/Contact";
 import Euducation from "./Components/Education"
-import ContactEmail from "./Components/ContactEmail";
+import Create from "./Components/ContactEmail";
 const App = () => {
     
     return (
@@ -20,7 +20,7 @@ const App = () => {
             <Euducation />
             <Contact />
             <Footer />
-            <ContactEmail />
+            <Create />
         </div>
     );
 };
