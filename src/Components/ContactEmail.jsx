@@ -27,15 +27,17 @@ const handleSubmit = (e) =>{
 
 
   return (
-    <div className='w-full h-screen flex justify-center items-center'>
+    
 
         <form
         onSubmit={handleSubmit}
         onReset={()=>setFormData(initialState)}
-        className="flex flex-col gap-2"
+        className="flex flex-col gap-2 "
         >
+
+            <div className=''>
             <input
-            className="p-2 border border-blue-600 outline-none rounded" 
+            className="p-2 border border-blue-600 outline-none rounded mr-2" 
             type="text"
             placeholder='Enter Email Name'
             name='EmailName'
@@ -43,17 +45,8 @@ const handleSubmit = (e) =>{
             onChange={handlechange}
             required
             />
-            <input 
-            className="p-2 border border-blue-600 outline-none rounded"
-            type="number"
-            name='phoneNumber'
-            placeholder='Enter PhoneNumber'
-            value={formData.price}
-            onChange={handlechange}
-            required
-             />
 
-             <input
+            <input
               className="p-2 border border-blue-600 outline-none rounded" 
               type="text"
               name='Name'
@@ -62,6 +55,21 @@ const handleSubmit = (e) =>{
               onChange={handlechange}
               required
               />
+
+            </div>
+           
+          <div>
+          <input 
+            className="p-2 border border-blue-600 outline-none rounded mr-2"
+            type="number"
+            name='phoneNumber'
+            placeholder='Enter PhoneNumber'
+            value={formData.price}
+            onChange={handlechange}
+            required
+             />
+
+          
               
               <input
                className="p-2 border border-blue-600 outline-none rounded" 
@@ -72,6 +80,7 @@ const handleSubmit = (e) =>{
                onChange={handlechange}
                required
                />
+          </div>
 
         <button type="submit" className="px-4 py-2 bg-blue-300 rounded">submit</button>
         <button type="reset" className="px-4 py-2 bg-blue-300 rounded">reset</button>
@@ -80,7 +89,7 @@ const handleSubmit = (e) =>{
 
 
 
-    </div>
+    
   )
 }
 

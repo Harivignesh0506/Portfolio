@@ -1,14 +1,15 @@
 import React from 'react';
 import img from '../Asstes/WhatsApp_Image_2024-12-29_at_10.25.09_f5e7d87f-removebg-preview.png';
-import { AiOutlineTwitter, AiOutlineFacebook, AiOutlineLinkedin } from "react-icons/ai";
+import { AiOutlineTwitter, AiOutlineFacebook, AiOutlineLinkedin,AiOutlineInstagram } from "react-icons/ai";
 
 const Hero = () => {
   const config = {
     subtitle: "I am a Full-stack Developer",
     social: {
-      twitter: "#", // Add your Twitter URL
-      facebook: "#", // Add your Facebook URL
-      linkedin: "#", // Add your LinkedIn URL
+      twitter: "https://x.com/Hari_Vignesh_V", // Add your Twitter URL
+      facebook: "https://www.facebook.com/hari.vishnu.96558?mibextid=ZbWKwL", // Add your Facebook URL
+      linkedin: "https://www.linkedin.com/in/hari-vignesh-52b90b339/", // Add your LinkedIn URL
+      Instagram: "https://www.instagram.com/h4rrrri.xox/", // Add your Insta URL
     },
   };
 
@@ -29,6 +30,9 @@ const Hero = () => {
           </a>
           <a href={config.social.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition">
             <AiOutlineLinkedin size={40} />
+          </a>
+          <a href={config.social.Instagram} target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition">
+            <AiOutlineInstagram size={40} />
           </a>
         </div>
       </div>

@@ -1,9 +1,10 @@
 import React from "react";
 import Resumeimg from "../Asstes/Resume-clipart-transparent-1.png";
 
+
 const Resume = () => {
   const config = {
-    link: "#", // Replace with the actual link to your resume
+    link: "https://pdflink.to/544bc475/", // Replace with the actual link to your resume
   };
 
   return (

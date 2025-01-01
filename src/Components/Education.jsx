@@ -22,7 +22,7 @@ const Euducation = () => {
     >
       {/* Section Title */}
       <div className="text-center md:text-left flex justify-center items-center md:items-start text-[#000000]">
-        <h1 className="text-4xl border-b-4 border-black mb-5 w-max font-bold">
+        <h1 className="text-4xl border-b-4  mb-5 w-max font-bold">
           My Education & Work Experience
         </h1>
       </div>

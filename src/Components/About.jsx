@@ -18,7 +18,7 @@ const About = () => {
       {/* Text Section */}
       <div className="md:w-2/3 flex justify-center items-center">
         <div className="flex flex-col justify-center text-[#000000] text-center md:text-left md:ml-10">
-          <h1 className="text-4xl border-b-4 border-black mb-5 w-max font-bold mx-auto md:mx-0">About Me</h1>
+          <h1 className="text-4xl border-b-4  mb-5 w-max font-bold mx-auto md:mx-0">About Me</h1>
           <p className="pb-5">{config.line1}</p>
           <p className="pb-5">{config.line2}</p>
           <p>{config.line3}</p>
