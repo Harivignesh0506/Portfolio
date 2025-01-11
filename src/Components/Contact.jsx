@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { MdOutlineMail } from "react-icons/md";
 import { MdOutlineLocalPhone } from "react-icons/md";
 import { IoLocationOutline } from "react-icons/io5";
+import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from 'react-toastify';
 
 const Contact = () => {
   const config = {
@@ -20,6 +22,10 @@ const Contact = () => {
   };
 
   const [formData, setFormData] = useState(initialState);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [feedbackMessage, setFeedbackMessage] = useState(null);
+
+  const form = useRef();
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -28,8 +34,22 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
-    setFormData(initialState);
+    setIsSubmitting(true);
+    setFeedbackMessage(null);
+
+    emailjs
+      .sendForm("service_f13zp8p", "template_f9bsdun", form.current, "FE8REB9mn6eLY-KJF")
+      .then(
+        () => {
+          toast.success("Message sent successfully!");
+          setFormData(initialState);
+        },
+        (error) => {
+          toast.error("Failed to send message. Please try again.");
+          console.error(error.text);
+        }
+      )
+      .finally(() => setIsSubmitting(false));
   };
 
   return (
@@ -37,20 +57,18 @@ const Contact = () => {
       id="con"
       className="flex flex-col items-center bg-gradient-to-r from-[#e8eaf6] to-[#9ba7c4] px-5 py-16"
     >
-      {/* Centered Heading */}
+       <ToastContainer />
       <div className="text-center mb-10">
-        <h1 className="text-4xl border-b-4  inline-block font-bold text-black">
+        <h1 className="text-4xl border-b-4 inline-block font-bold text-black">
           Contact
         </h1>
       </div>
 
-      {/* Content Section */}
       <div className="flex flex-col md:flex-row justify-between items-center w-full max-w-6xl gap-8">
-        {/* Contact Info Section (Left) */}
         <div className="md:w-1/2 w-full px-5">
           <div className="text-center md:text-left text-[#000000]">
             <p className="pb-5 text-lg text-black">
-            I’d love to hear from you! Whether you’re looking to collaborate on a project, have a job opportunity, or wish to discuss potential work, feel free to get in touch.
+              I’d love to hear from you! Whether you’re looking to collaborate on a project, have a job opportunity, or wish to discuss potential work, feel free to get in touch.
             </p>
             <div className="space-y-4">
               <p className="flex items-center gap-2">
@@ -79,9 +97,8 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Form Section (Right) */}
-        <div className=" rounded-sm shadow-lg p-8 w-full md:w-1/2">
-          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+        <div className="rounded-sm shadow-lg p-8 w-full md:w-1/2">
+          <form ref={form} onSubmit={handleSubmit} className="flex flex-col gap-4">
             <div className="flex flex-col md:flex-row gap-4">
               <input
                 type="text"
@@ -142,11 +159,12 @@ const Contact = () => {
             <button
               type="submit"
               className="flex items-center justify-center bg-[#909ebd] text-black font-bold px-6 py-3 rounded-full hover:bg-[#9ba7c4] transition duration-300"
+              disabled={isSubmitting}
             >
-              <span className="pr-2">➤</span>
-              Send Message
+              {isSubmitting ? "Sending..." : "Send Message"}
             </button>
           </form>
+       
         </div>
       </div>
     </section>
