@@ -19,7 +19,7 @@ const Project = () => {
       },
       {
         image: web3,
-        description: "A Blog Platform. Built With React and Node.js.",
+        description: "A Blog Platform. Built With React and React JS.",
         link: "https://github.com/",
       },
     ],
