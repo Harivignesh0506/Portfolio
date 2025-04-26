@@ -1,5 +1,7 @@
 import React from "react";
 import Resumeimg from "../Asstes/Resume-clipart-transparent-1.png";
+import { motion } from "framer-motion";
+
 
 
 const Resume = () => {
@@ -14,11 +16,18 @@ const Resume = () => {
     >
       {/* Resume Image */}
       <div className="py-6 md:w-1/3 flex justify-center">
-        <img
-          className="w-[250px] h-[250px] md:w-[300px] md:h-[300px] object-contain rounded shadow-lg"
-          src={Resumeimg}
-          alt="Resume Illustration"
-        />
+      <motion.img
+        src={Resumeimg}
+        alt="Reviews Illustration"
+        className=" max-w-md  h-[250px] md:w-[300px] md:h-[300px] object-contain rounded shadow-lg"
+        initial={{ y: 0 }}
+        animate={{ y: [0, -10, 0] }}
+        transition={{
+          repeat: Infinity,
+          repeatType: "loop",
+          duration: 3,
+        }}
+      />
       </div>
 
       {/* Resume Text */}

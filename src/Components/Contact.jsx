@@ -9,7 +9,7 @@ const Contact = () => {
   const config = {
     email: "harivignesh0506@gmail.com",
     phone: "86674-13356",
-    location: "A-110, Travancore Apartment, Kattankulathur, Potheri, Chennai-603203",
+    location: "Madurai-625020",
   };
 
   const initialState = {

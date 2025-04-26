@@ -3,7 +3,7 @@ import Aboutimg from '../Asstes/1_eF7SJ9Zn2oJwSxkzn3H-Tw (1).png';
 
 const About = () => {
   const config = {
-    line1: "Hi, I’m Hari Vignesh, a passionate Full-Stack Developer specializing in the MERN Stack",
+    line1: "Hi, I’m Hari Vignesh, a passionate React.js Developer focused on building dynamic and responsive web applications.",
     line2: "Skilled in building responsive and dynamic web applications using MongoDB, Express.js, React.js, and Node.js.",
     line3: "I am actively looking for opportunities where I can apply my skills, learn from industry experts, and contribute to meaningful projects. My goal is to grow as a developer and make a positive impact in the tech world."
   };

@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import web1 from "../Asstes/coloshop-free-bootstrap-ecommerce-website-template.jpg";
 import web2 from "../Asstes/81fd1e100718715.5f0ef9fe9e100.png";
 import web3 from "../Asstes/blog.jpg";
+import Aos from "aos";
 
 const Project = () => {
   const config = {
     project: [
       {
         image: web1,
-        description: "An Ecommerce Website. Built With MERN Stack.",
+        description: "An Ecommerce Website. Built With React JS.",
         link: "https://github.com/",
       },
       {
@@ -24,10 +25,18 @@ const Project = () => {
     ],
   };
 
+  useEffect(()=>{
+    Aos.init({
+      duration:1000,
+      once:true,
+    });
+  },[]);
+
   return (
     <section
       id="project"
       className="flex flex-col py-16 px-5 bg-gradient-to-r from-[#e8eaf6] to-[#9ba7c4]"
+      
     >
       {/* Section Header */}
       <div className="w-full text-center mb-10">
@@ -36,12 +45,15 @@ const Project = () => {
         </h1>
         <p className="text-lg text-gray-800">
           These are some of my best projects. I built them with React, MERN,
-          and vanilla CSS. Check them out below!
+          and vanilla CSS. Check them out below!  
         </p>
       </div>
 
       {/* Projects Grid */}
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-5 md:px-20">
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-5 md:px-20"
+      data-aos="zoom-in"
+      data-aos-delay="100"
+      >
         {config.project.map((project, index) => (
           <a
             key={index}
@@ -49,6 +61,8 @@ const Project = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="group"
+            data-aos="fade-up"
+        data-aos-delay={index * 100}
           >
             <div className="relative cursor-pointer overflow-hidden shadow-lg rounded-lg">
               {/* Project Image */}

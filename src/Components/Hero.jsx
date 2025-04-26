@@ -4,7 +4,7 @@ import { AiOutlineTwitter, AiOutlineFacebook, AiOutlineLinkedin,AiOutlineInstagr
 
 const Hero = () => {
   const config = {
-    subtitle: "I am a Full-stack Developer",
+    subtitle: "I am a React JS Developer",
     social: {
       twitter: "https://x.com/Hari_Vignesh_V", // Add your Twitter URL
       facebook: "https://www.facebook.com/hari.vishnu.96558?mibextid=ZbWKwL", // Add your Facebook URL
@@ -16,7 +16,7 @@ const Hero = () => {
   return (
     <section className="flex flex-col-reverse md:flex-row px-10 py-16 md:py-32 justify-center items-center bg-gradient-to-r from-[#e8eaf6] to-[#9ba7c4]">
       {/* Left Content */}
-      <div className="md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
+      <div className="md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left px-8">
         <h1 className="text-[#000000] text-4xl md:text-6xl font-Hero-font">
           Hi, <br /> I'm Hari Vignesh
         </h1>
